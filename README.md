@@ -1,2 +1,2 @@
 # PersonalProjectFridge
-PersonalProjectPracticeClasses
+Personal Project Practice Classes
