@@ -4,23 +4,33 @@ public class Bottle {
     double volume;
     String brand;
 
-    Bottle(double volume, String brand) {
-        this.volume = volume;
-        this.brand = brand;
+    Bottle(double maxVolume, String brand) {
+        this(brand);
+        this.maxVolume = maxVolume;
     }
 
-    public void fill(int currentVolume) {
-        if (this.volume > currentVolume) {
-            this.volume = currentVolume;
+    Bottle(double volume, String brand, double currentVolume) {
+        this(volume, brand);
+        this.currentVolume = currentVolume;
+    }
+
+    /* Доливам */
+    public void fill(double additionalVolume) {
+        this.currentVolume += additionalVolume;
+        if (this.maxVolume < this.currentVolume) {
+            this.currentVolume = this.maxVolume;
         }
     }
 
-    public String remove(String currentBrand) {
-        if (this.brand.equals(currentBrand)) {
-            return this.brand = currentBrand;
+    // Изливам
+    public double pour(double volume) {
+//        250ml, iskam 1l
+        double returnedVolume;
+        if (volume > this.currentVolume) {
+            return this.currentVolume;
         }
 
-        return null;
+        return volume;
     }
 
     public String change(String brand) {
@@ -32,7 +42,7 @@ public class Bottle {
 
     @Override
     public String toString() {
-        return "Volume -> " + volume +
+        return "Volume -> " + maxVolume +
                 " Brand -> " + brand;
 
     }
