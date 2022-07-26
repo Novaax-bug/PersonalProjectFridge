@@ -3,7 +3,7 @@ package PersonalProject.Fridge;
 public class Main {
     public static void main(String[] args) {
 
-        Fridge firstFridge = new Fridge(1, 30);
+        Fridge firstFridge = new Fridge(1, 30);//bottle capacity for current fridge is 30 /
         Shelf firstShelf = new Shelf(1, 5);
         Shelf secondShelf = new Shelf(2,5);
         Shelf thirdShelf = new Shelf(3,5);
@@ -33,5 +33,7 @@ public class Main {
         Bottle sixBeerPirinsko = new Bottle(0.500, "Pirisnko");
         Bottle sevenBeerPirinsko = new Bottle(0.500, "Pirisnko");
 
+        firstShelf.removeBottle(sevenBottle);
+        secondShelf.addBottle(firstBeerPirinsko);
     }
 }

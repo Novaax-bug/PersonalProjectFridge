@@ -21,7 +21,7 @@ public class Shelf {
     }
 
     public void removeBottle(Bottle currentBottles) {
-        if (this.bottles.size() > 0) {
+        if (this.bottles.size() > 0 && this.capacity > 0) {
             for (Bottle bottle : this.bottles) {
                 if (bottle == currentBottles) {
                     this.bottles.remove(bottle);
