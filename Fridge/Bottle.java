@@ -1,6 +1,7 @@
 package PersonalProject.Fridge;
 
 public class Bottle {
+    private String ID;
     private double maxVolume = 1;
     private String brand = "Coca-Cola";
     private double currentVolume = 0;
@@ -9,12 +10,17 @@ public class Bottle {
 
     }
 
+    Bottle(String ID) {
+        this.ID = ID;
+    }
+
     Bottle(double maxVolume, String brand) {
         this.maxVolume = maxVolume;
         this.brand = brand;
     }
 
-    Bottle(String brand) {
+    Bottle(String brand,String ID) {
+        this.ID = ID;
         this.brand = brand;
     }
 
@@ -56,4 +62,5 @@ public class Bottle {
         this.spill();
         this.fill(volume);
     }
+
 }

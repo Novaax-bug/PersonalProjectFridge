@@ -1,11 +1,12 @@
 package PersonalProject.Fridge;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Shelf {
     private int ID;
     private int capacity;
-    private List<Bottle> bottles;
+    private ArrayList<Bottle> bottles;
 
     Shelf(int ID, int capacity) {
         this.ID = ID;
@@ -13,20 +14,30 @@ public class Shelf {
     }
 
     public void addBottle(Bottle bottle) {
-        if (this.capacity >= this.bottles.size()) {
+        if (this.capacity > 0) {
             this.bottles.add(bottle);
-            this.capacity -= this.bottles.size();
-
+            this.capacity -= 1;
         }
     }
 
-    public void removeBottle(Bottle currentBottles) {
+    public void removeBottle(Bottle currentBottle) {
         if (this.bottles.size() > 0 && this.capacity > 0) {
             for (Bottle bottle : this.bottles) {
-                if (bottle == currentBottles) {
+                if (bottle == currentBottle) {
                     this.bottles.remove(bottle);
                 }
             }
         }
     }
+
+    public void removeBottleByID(Bottle ID){
+        if (this.bottles.size() > 0 && this.capacity > 0) {
+            for (Bottle currentID : this.bottles) {
+                if (ID == currentID) {
+                    this.bottles.remove(ID);
+                }
+            }
+        }
+    }
+
 }
