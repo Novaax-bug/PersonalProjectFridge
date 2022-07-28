@@ -33,7 +33,9 @@ public class Main {
         Bottle sixBeerPirinsko = new Bottle(0.500, "Pirisnko");
         Bottle sevenBeerPirinsko = new Bottle(0.500, "Pirisnko");
 
+        Bottle VIPBottle = new Bottle("1","VIP",1);
         firstShelf.removeBottle(sevenBottle);
         secondShelf.addBottle(firstBeerPirinsko);
+        firstShelf.removeBottleByID(VIPBottle);
     }
 }

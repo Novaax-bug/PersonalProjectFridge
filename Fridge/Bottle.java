@@ -14,18 +14,24 @@ public class Bottle {
         this.ID = ID;
     }
 
+    Bottle(String ID, String brand) {
+        this.ID = ID;
+        this.brand = brand;
+    }
+
     Bottle(double maxVolume, String brand) {
         this.maxVolume = maxVolume;
         this.brand = brand;
     }
 
-    Bottle(String brand,String ID) {
-        this.ID = ID;
-        this.brand = brand;
+    Bottle(String ID, String brand, double maxVolume) {
+        this(ID, brand);
+        this.maxVolume = maxVolume;
     }
 
-    Bottle(String brand, double maxVolume, double currentVolume) {
-        this(maxVolume, brand);
+
+    Bottle(String ID, String brand, double maxVolume, double currentVolume) {
+        this(ID, brand, maxVolume);
         this.currentVolume = currentVolume;
     }
 
