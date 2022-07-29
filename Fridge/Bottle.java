@@ -28,7 +28,7 @@ public class Bottle {
     }
 
     Bottle(String ID, String brand) {
-        this.ID = ID;
+        this(ID);
         this.brand = brand;
     }
 
