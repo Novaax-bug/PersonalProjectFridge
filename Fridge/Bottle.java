@@ -4,11 +4,24 @@ public class Bottle {
     private String ID;
     private double maxVolume = 1;
     private String brand = "Coca-Cola";
-    private double currentVolume = 0;
 
-    Bottle() {
-
+    public String getID() {
+        return ID;
     }
+
+    public double getMaxVolume() {
+        return maxVolume;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public double getCurrentVolume() {
+        return currentVolume;
+    }
+
+    private double currentVolume = 0;
 
     Bottle(String ID) {
         this.ID = ID;
@@ -16,11 +29,6 @@ public class Bottle {
 
     Bottle(String ID, String brand) {
         this.ID = ID;
-        this.brand = brand;
-    }
-
-    Bottle(double maxVolume, String brand) {
-        this.maxVolume = maxVolume;
         this.brand = brand;
     }
 

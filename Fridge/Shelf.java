@@ -21,7 +21,7 @@ public class Shelf {
     }
 
     public void removeBottle(Bottle currentBottle) {
-        if (this.bottles.size() > 0 && this.capacity > 0) {
+        if (this.bottles.size() > 0) {
             for (Bottle bottle : this.bottles) {
                 if (bottle == currentBottle) {
                     this.bottles.remove(bottle);
@@ -30,10 +30,10 @@ public class Shelf {
         }
     }
 
-    public void removeBottleByID(Bottle ID){
-        if (this.bottles.size() > 0 && this.capacity > 0) {
+    public void removeBottleByID(String ID) {
+        if (this.bottles.size() > 0) {
             for (Bottle currentID : this.bottles) {
-                if (ID == currentID) {
+                if (currentID.equals(ID)) {
                     this.bottles.remove(ID);
                 }
             }
