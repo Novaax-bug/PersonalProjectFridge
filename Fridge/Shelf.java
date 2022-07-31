@@ -41,7 +41,7 @@ public class Shelf {
                 if (bottle.getID().equals(ID)) {
                     this.bottles.remove(bottle);
                     if (this.bottles.size() <= 0) {
-                        System.out.println("The Shelf is empty!");
+                        System.out.println("The Shelf " + getID() + " is empty!");
                         break;
                     }
                 }
