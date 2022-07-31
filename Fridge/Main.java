@@ -40,9 +40,12 @@ public class Main {
 
      firstShelf.removeBottle(firstBottle);
      firstShelf.removeBottle(VIPBottle);
-
+//
      firstShelf.removeBottleByID("2");
      firstShelf.removeBottleByID("3");
+
+     firstShelf.addBottle(sevenBottle);
+
 
     }
 }

@@ -28,23 +28,24 @@ public class Shelf {
 
     public void removeBottle(Bottle currentBottle) {
         if (this.bottles.size() > 0) {
-            for (Bottle bottle : this.bottles) {
-                if (bottle == currentBottle) {
-                    this.bottles.remove(currentBottle);
-
-                }
+            if (this.bottles.contains(currentBottle)) {
+                this.bottles.remove(currentBottle);
             }
+
         }
     }
 
     public void removeBottleByID(String ID) {
         if (this.bottles.size() > 0) {
-            for (Bottle currentID : this.bottles) {
-                if (ID.equals(currentID.getID())) {
-                    this.bottles.remove(currentID);
+            for (Bottle bottle : this.bottles) {
+                if (bottle.getID().equals(ID)) {
+                    this.bottles.remove(bottle);
+                    if (this.bottles.size() <= 0) {
+                        System.out.println("The Shelf is empty!");
+                        break;
+                    }
                 }
             }
         }
     }
-
 }
