@@ -8,6 +8,7 @@ public class Bottle {
     public String getID() {
         return ID;
     }
+    private double currentVolume = 0;
 
     public double getMaxVolume() {
         return maxVolume;
@@ -21,7 +22,6 @@ public class Bottle {
         return currentVolume;
     }
 
-    private double currentVolume = 0;
 
     Bottle(String ID) {
         this.ID = ID;
