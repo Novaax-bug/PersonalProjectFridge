@@ -8,9 +8,15 @@ public class Shelf {
     private int capacity;
     private ArrayList<Bottle> bottles;
 
+    public int getID() {
+        return ID;
+    }
+
     Shelf(int ID, int capacity) {
         this.ID = ID;
         this.capacity = capacity;
+        this.bottles = new ArrayList<>();
+
     }
 
     public void addBottle(Bottle bottle) {
@@ -24,7 +30,8 @@ public class Shelf {
         if (this.bottles.size() > 0) {
             for (Bottle bottle : this.bottles) {
                 if (bottle == currentBottle) {
-                    this.bottles.remove(bottle);
+                    this.bottles.remove(currentBottle);
+
                 }
             }
         }
@@ -33,8 +40,8 @@ public class Shelf {
     public void removeBottleByID(String ID) {
         if (this.bottles.size() > 0) {
             for (Bottle currentID : this.bottles) {
-                if (currentID.equals(ID)) {
-                    this.bottles.remove(ID);
+                if (ID.equals(currentID.getID())) {
+                    this.bottles.remove(currentID);
                 }
             }
         }
