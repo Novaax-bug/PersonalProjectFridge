@@ -37,15 +37,12 @@ public class Shelf {
 
     public void removeBottleByID(String ID) {
         if (this.bottles.size() > 0) {
-            for (Bottle bottle : this.bottles) {
-                if (bottle.getID().equals(ID)) {
-                    this.bottles.remove(bottle);
-                    if (this.bottles.size() <= 0) {
-                        System.out.println("The Shelf " + getID() + " is empty!");
-                        break;
-                    }
-                }
+            this.bottles.removeIf(bottle -> bottle.getID().equals(ID));
+            if (this.bottles.size() <= 0) {
+                System.out.println("The Shelf " + getID() + " is empty!");
+
             }
         }
     }
 }
+
