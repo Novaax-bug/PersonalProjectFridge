@@ -28,7 +28,6 @@ public class Shelf {
         }
     }
 
-
     public void removeBottle(Bottle currentBottle) {
         if (this.bottles.size() > 0) {
             if (this.bottles.contains(currentBottle)) {
@@ -51,11 +50,19 @@ public class Shelf {
     public int totalBottleInShelf() {
         return this.bottles.size();
     }
+    public int countEmptyBottle () {
+        int countBottle =0;
+        for (Bottle bottle:this.bottles) {
+            if(bottle.getCurrentVolume() <= 0){
+                countBottle++;
+            }
+        }return countBottle;
+    }
 
     public double getMaxLiterPerShelf() {
         double maxLiters = 0;
         for (Bottle bottle : this.bottles) {
-            maxLiters += bottle.getMaxVolume();
+            maxLiters += bottle.getCurrentVolume();
         }
         return maxLiters;
     }

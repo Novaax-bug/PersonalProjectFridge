@@ -40,13 +40,23 @@ public class Fridge {
         return availabilityBottle;
 
     }
-    public double maxLiterInFridge () {
+
+    public double maxLiterInFridge() {
         double maxLiters = 0;
-        for (Shelf shelf:this.shelfList) {
-            maxLiters = shelf.getMaxLiterPerShelf();
+        for (Shelf shelf : this.shelfList) {
+            maxLiters += shelf.getMaxLiterPerShelf();
         }
         return maxLiters;
     }
 
+    public int emptyBottleInFridge() {
+        int countEmptyBottle = 0;
+        for (Shelf shelf : this.shelfList) {
+            if (shelf.countEmptyBottle() > 0) {
+                countEmptyBottle += shelf.countEmptyBottle();
+            }
+        }
+        return countEmptyBottle;
+    }
 
 }
