@@ -1,12 +1,14 @@
 package PersonalProject.Fridge;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Shelf {
     private int ID;
     private int capacity;
-    private ArrayList<Bottle> bottles;
+    private List<Bottle> bottles;
+
 
     public int getID() {
         return ID;
@@ -26,6 +28,7 @@ public class Shelf {
         }
     }
 
+
     public void removeBottle(Bottle currentBottle) {
         if (this.bottles.size() > 0) {
             if (this.bottles.contains(currentBottle)) {
@@ -43,6 +46,18 @@ public class Shelf {
 
             }
         }
+    }
+
+    public int totalBottleInShelf() {
+        return this.bottles.size();
+    }
+
+    public double getMaxLiterPerShelf() {
+        double maxLiters = 0;
+        for (Bottle bottle : this.bottles) {
+            maxLiters += bottle.getMaxVolume();
+        }
+        return maxLiters;
     }
 }
 

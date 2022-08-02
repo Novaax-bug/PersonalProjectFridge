@@ -1,16 +1,19 @@
 package PersonalProject.Fridge;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fridge {
     private int ID;
     private List<Shelf> shelfList;
+    private int maxCapacityOfFridge;
 
 
-    Fridge(int ID, int capacity) {
+    Fridge(int ID) {
         this.ID = ID;
-
+        this.shelfList = new ArrayList<>();
+        this.maxCapacityOfFridge = 30;
     }
 
     public void addShelf(Shelf currentShelf) {
@@ -24,8 +27,26 @@ public class Fridge {
             }
         }
     }
-    public int capacityOfShelf(){
+
+    public int getCapacityOfShelf() {
         return this.shelfList.size();
     }
+
+    public int availabilityBottleInFridge() {
+        int availabilityBottle = 0;
+        for (Shelf shelf : this.shelfList) {
+            availabilityBottle += shelf.totalBottleInShelf();
+        }
+        return availabilityBottle;
+
+    }
+    public double maxLiterInFridge () {
+        double maxLiters = 0;
+        for (Shelf shelf:this.shelfList) {
+            maxLiters = shelf.getMaxLiterPerShelf();
+        }
+        return maxLiters;
+    }
+
 
 }

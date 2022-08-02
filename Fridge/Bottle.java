@@ -4,11 +4,13 @@ public class Bottle {
     private String ID;
     private double maxVolume = 1;
     private String brand = "Coca-Cola";
+    private double currentVolume = 0;
+
+
 
     public String getID() {
         return ID;
     }
-    private double currentVolume = 0;
 
     public double getMaxVolume() {
         return maxVolume;

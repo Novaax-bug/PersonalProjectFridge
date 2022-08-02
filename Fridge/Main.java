@@ -3,12 +3,17 @@ package PersonalProject.Fridge;
 public class Main {
     public static void main(String[] args) {
 
-        Fridge firstFridge = new Fridge(1, 5);//Shelf capacity for current fridge/
+        Fridge firstFridge = new Fridge(1);
         Shelf firstShelf = new Shelf(1, 5);
         Shelf secondShelf = new Shelf(2, 5);
         Shelf thirdShelf = new Shelf(3, 5);
         Shelf fourShelf = new Shelf(4, 5);
         Shelf fiveShelf = new Shelf(5, 5);
+        firstFridge.addShelf(firstShelf);
+        firstFridge.addShelf(secondShelf);
+        firstFridge.addShelf(thirdShelf);
+        firstFridge.addShelf(fourShelf);
+        firstFridge.addShelf(fiveShelf);
 
         Bottle firstBottle = new Bottle("1", "Coca-cola");
         Bottle secondBottle = new Bottle("2", "Coca-cola");
@@ -34,18 +39,16 @@ public class Main {
         Bottle sevenBeerPirinsko = new Bottle("20", "Pirisnko");
 
         Bottle VIPBottle = new Bottle("21", "VIP", 1);
-     firstShelf.addBottle(firstBottle);
-     firstShelf.addBottle(secondBottle);
-     firstShelf.addBottle(thirdBottle);
 
-     firstShelf.removeBottle(firstBottle);
-     firstShelf.removeBottle(VIPBottle);
-//
-     firstShelf.removeBottleByID("2");
-     firstShelf.removeBottleByID("3");
+        firstShelf.removeBottle(sevenBottle);
+        firstShelf.removeBottleByID("1");
 
-     firstShelf.addBottle(sevenBottle);
+        secondShelf.addBottle(firstBeerPirinsko);
+        secondShelf.addBottle(secondBeerPirinsko);
 
+        firstBeerPirinsko.fill(0.50);
+
+        System.out.println(firstFridge.maxLiterInFridge());
 
     }
 }
