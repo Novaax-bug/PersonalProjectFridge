@@ -40,14 +40,21 @@ public class Main {
 
         Bottle VIPBottle = new Bottle("21", "VIP", 1);
 
-        firstShelf.removeBottle(sevenBottle);
-        firstShelf.removeBottleByID("1");
 
         secondShelf.addBottle(firstBeerPirinsko);
         secondShelf.addBottle(secondBeerPirinsko);
+        secondShelf.addBottle(thirdBeerPirinsko);
+        firstShelf.addBottle(rakiqBurgaska);
+        firstShelf.addBottle(rakiqPeshterska);
 
         firstBeerPirinsko.fill(0.50);
+        secondBeerPirinsko.fill(0.250);
+        thirdBeerPirinsko.fill(0);
+        rakiqBurgaska.fill(1);
 
+
+        System.out.println(firstFridge.availabilityBottleInFridge());
+        System.out.println(firstFridge.emptyBottleInFridge());
         System.out.println(firstFridge.maxLiterInFridge());
 
     }
